@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                         .on('error', grunt.warn.bind(grunt))
                         .on('close', function () {
                             grunt.log.writeln(chalk.green('✔ ') + file.src[0] + chalk.gray(' (' + msg + ')'));
-                            next();
+                            setImmediate(next);
                         }));
             });
         }, function (err) {
